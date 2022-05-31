@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/FTBmall-back/MetaJRS后台.iml" filepath="$PROJECT_DIR$/FTBmall-back/MetaJRS后台.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FTBmall-back/FTBmall-back.iml" filepath="$PROJECT_DIR$/FTBmall-back/FTBmall-back.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/后端.iml" filepath="$PROJECT_DIR$/.idea/后端.iml" />
     </modules>
   </component>
