@@ -10,11 +10,11 @@
         <version>2.4.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <name>MetaJRS后台</name>
-    <description>MetaJRS's website for Spring Boot</description>
+    <name>FTBmall后台</name>
+    <description>FTBmall website for Spring Boot</description>
 
     <groupId>com.metajrs</groupId>
-    <artifactId>MetaJRS后台</artifactId>
+    <artifactId>FTBmall后台</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
