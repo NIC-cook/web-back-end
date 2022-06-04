@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("account")
+@RequestMapping("getaccount")
 public class accountgetController {
 
     @Autowired
@@ -15,7 +15,7 @@ public class accountgetController {
 
 
     @RequestMapping("/getAccount_id")
-    public String getAccount_id(@RequestParam(value="id",required = false)String id){
+    public String getAccount_id(@RequestParam(value="id",required = false)String id,@RequestParam(value = "password",required = false)String password){
         return name.getName(id);
     }
     @RequestMapping("/getPassword")

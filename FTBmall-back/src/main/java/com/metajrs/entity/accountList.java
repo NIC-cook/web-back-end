@@ -2,10 +2,6 @@ package com.metajrs.entity;
 
 import lombok.Data;
 
-/*
-@author ZhongTongYi
-@Date 2022/4/7
-* */
 
 @Data
 public class accountList {

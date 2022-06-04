@@ -10,11 +10,12 @@ public class getAccount_Name {
     @Qualifier("getAccountName")
     @Autowired
     private getAccountName Account;
-
     public String getName(String id) {
         return Account.getName(id);
     }
+
     public String getPassword(String id) {
         return Account.getpassword(id);
     }
+
 }
