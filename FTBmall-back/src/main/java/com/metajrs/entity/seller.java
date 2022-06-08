@@ -5,15 +5,14 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
-@TableName("accountlist")
+@TableName("seller")
 @Data
-public class account {
+public class seller {
     @TableId(value = "account_id",type = IdType.AUTO)
     private String account_id;
+    private String shop_id;
+    private String shop_name;
+    private String address;
+    private String license_id;
     private String account_name;
-    private String password;
-    private String power;
-    private String phone;
-    private String email;
-    private String orderlist_id;
 }

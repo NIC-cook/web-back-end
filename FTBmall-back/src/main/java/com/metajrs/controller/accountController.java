@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import java.util.Random;
 
+
 @RestController
 @RequestMapping(value = "/account",method = RequestMethod.GET)
 public class accountController {
@@ -15,13 +16,30 @@ public class accountController {
     @Resource
     accountMapper accountMapper;
 
-    @PostMapping
-    public Result<?> save(@RequestBody account account){
+    @PostMapping("/saveUser")//用户注册
+    public Result<?> saveUser(@RequestBody account account){
         Random r=new Random();
         account.setPower("3");
-        account.setAccount_id("10"+(r.nextDouble()*100));
-        account.setOrderList_id(account.getAccount_id());
+        account.setAccount_id("10"+(r.nextInt(99)+100));
+        account.setOrderlist_id(account.getAccount_id());
         accountMapper.insert(account);
         return Result.success();
     }
+
+    @PostMapping("/userLogin")//用户注册
+    @CrossOrigin
+    public Result<?> userLogin(@RequestBody account account){
+        account user;
+        user=accountMapper.selectById(account.getAccount_id());
+        if (user==null)
+            return Result.error("400","账号不存在");
+        if ( user.getPassword().equals(account.getPassword()))
+            return Result.success();
+        else {
+                return Result.error("400", "密码错误");
+
+        }
+    }
+
+
 }

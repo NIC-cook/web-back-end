@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆页面</title>
+    <script src="jq.js"></script>
+</head>
+<body>
+    <form method="post" id="user">
+        账号：<input type="text" id="accountId"><br>
+        密码：<input type="password" id="password"><br><br>
+        <input type="button" onclick="login()" value="登陆">
+        <input type="reset" value="重置">
+    </form>
+</body>
+<script type="text/javascript">
+    function login() {
+        const accountId = document.getElementById("accountId").value;
+        const password = document.getElementById("password").value;
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: 'http//localhost:8081/account/userLogin',
+            contentType: "application/json",
+            data:JSON.stringify({
+                "accountId": accountId,
+                "password": password
+            }),
+            success: function (result) {
+                console.log("data is :" + result)
+                if (result.code == 200) {
+                    alert("登陆成功");
+                    window.location.href = "https://baidu.com";
+                }else {
+                    alert(result.message)
+                }
+            }
+        });
+    }
+</script>
+</html>
