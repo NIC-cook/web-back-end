@@ -40,6 +40,7 @@ public class Result<T> {
         Result result = new Result<>();
         result.setCode("200");
         result.setMsg("成功");
+        result.setData("201");
         return result;
     }
 

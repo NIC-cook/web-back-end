@@ -9,11 +9,11 @@ import lombok.Data;
 @Data
 public class account {
     @TableId(value = "account_id",type = IdType.AUTO)
-    private String account_id;
-    private String account_name;
+    private String accountId;
+    private String accountName;
     private String password;
     private String power;
     private String phone;
     private String email;
-    private String orderlist_id;
+    private String orderlistId;
 }
