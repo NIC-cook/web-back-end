@@ -32,11 +32,12 @@ public class accountController {
     public Result<?> userLogin(@RequestBody account account){
         account user;
         user=accountMapper.selectById(account.getAccountId());
-        if (user==null)
+        System.out.println(user);
+        if (user==null)//账号错误
             return Result.error("401","账号不存在");
-        if ( user.getPassword().equals(account.getPassword()))
+        if ( user.getPassword().equals(account.getPassword()))//成功
             return Result.success(user.getPower());
-        else {
+        else {//密码错误
                 return Result.error("402", "密码错误");
         }
     }
