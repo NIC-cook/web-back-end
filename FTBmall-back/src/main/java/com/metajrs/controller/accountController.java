@@ -18,6 +18,7 @@ public class accountController {
     accountMapper accountMapper;
 
     @PostMapping("/saveUser")//用户注册
+    @CrossOrigin
     public Result<?> saveUser(@RequestBody account account){
         Random r=new Random();
         account.setPower("3");
